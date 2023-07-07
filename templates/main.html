@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Disease Predictor</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Website Title -->
+
+  <div class="container">
+    <h2 class='container-heading'><span class="heading_font">Heart Disease Predictor</span></h2>
+    <div class='description'>
+      <p>A Machine Learning Web Application that predicits chances of having heart Disease or not, Built with Flask.</p><br>
+        <p>(Note:This model is 91.48% accurate)</p>
+    </div>
+  </div>
+
+  <!-- Text Area -->
+  <div class="ml-container">
+    <form action="{{ url_for('predict')}}" method="POST"> 
+
+      
+        
+        <label for="BMI">Body Mass Index</label>
+        <input type="text" id="BMI" name="BMI" placeholder="A number (kg/m^2)"><br>
+
+        <label for="Smoking">Smoking ?</label>
+        <select id="Smoking" name="Smoking">
+          <option selected>----select option----</option>
+          <option value="2">No</option>
+          <option value="3">Yes</option>
+        </select><br>
+
+        <label for="AlcoholDrinking">Heavy Drinking ?</label>
+        <select id="AlcoholDrinking" name="AlcoholDrinking">
+          <option selected>----select option----</option>
+          <option value="2">No</option>
+          <option value="3">Yes</option>
+        </select><br>
+
+        <label for="Stroke">(Ever told)(you had) a stroke ?</label>
+        <select id="Stroke" name="Stroke">
+          <option selected>----select option----</option>
+          <option value="2">No</option>
+          <option value="3">Yes</option>
+        </select><br>
+
+        <label for="PhysicalHealth">Number of days from last 30 days your physical health is not good</label>
+        <input type="text" id="PhysicalHealth" name="PhysicalHealth" placeholder="A number in range [0-30] days"><br>
+
+        <label for="MentalHealth">Number of days from last 30 days your mental health is not good</label>
+        <input type="text" id="MentalHealth" name="MentalHealth" placeholder="A number in range [0-30] days"><br>
+
+        <label for="DiffWalking">Do you have difficulty in walking ?</label>
+        <select id="DiffWalking" name="DiffWalking">
+          <option selected>----select option----</option>
+          <option value="2">No</option>
+          <option value="3">Yes</option>
+        </select><br>
+
+        <label for="Sex">Sex</label>
+        <select id="Sex" name="Sex">
+          <option selected>----select option----</option>
+          <option value="2">Female</option>
+          <option value="3">Male</option>
+        </select><br>
+
+        <label for="AgeCategory">Select your Age Category</label>
+        <select id="AgeCategory" name="AgeCategory">
+          <option selected>----select option----</option>
+          <option value="2">18-24</option>
+          <option value="3">25-29</option>
+          <option value="4">30-34</option>
+          <option value="5">35-39</option>
+          <option value="6">40-44</option>
+          <option value="7">45-49</option>
+          <option value="8">50-54</option>
+          <option value="9">55-59</option>
+          <option value="10">60-64</option>
+          <option value="11">65-69</option>
+          <option value="12">70-74</option>
+          <option value="13">75-79</option>
+          <option value="14">890 or older</option>
+        </select><br>
+
+        <label for="Diabetic">Do you have diabetes ?</label>
+        <select id="Diabetic" name="Diabetic">
+          <option selected>----select option----</option>
+          <option value="2">No</option>
+          <option value="3">Yes</option>
+          <option value="4">No, borderline diabetes</option>
+          <option value="3">Yes(during pregnancy)</option>
+        </select><br>
+
+        <label for="PhysicalActivity">Are you started any extra physical activity in last 30 days</label>
+        <select id="PhysicalActivity" name="PhysicalActivity">
+          <option selected>----select option----</option>
+          <option value="2">No</option>
+          <option value="3">Yes</option>
+        </select><br>
+
+        <label for="GenHealth">How is your general health</label>
+        <select id="GenHealth" name="GenHealth">
+          <option selected>----select option----</option>
+          <option value="5">Poor</option>
+          <option value="3">Fair</option>
+          <option value="4">Good</option>
+          <option value="2">Very Good</option>
+          <option value="6">Excellent</option>
+        </select><br>
+
+        <label for="SleepTime">On average, how many hours of sleep do you get in a 24-hour period ?</label>
+        <input type="text" id="SleepTime" name="SleepTime" placeholder="A number in range [0-24] hours"><br>
+
+        <label for="Asthma">(Ever told)(you had) asthma ?</label>
+        <select id="Asthma" name="Asthma">
+          <option selected>----select option----</option>
+          <option value="2">No</option>
+          <option value="3">Yes</option>
+        </select><br>
+      
+
+      <input type="submit" class="my-cta-button" value="Predict">
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div class='footer'>
+    <div class="contact">
+      <a target="_blank" href="https://github.com/ilyas7273ilyas/Working-Projects"><i
+          class="fab fa-github fa-lg contact-icon"></i></a>
+      <a target="_blank" href="https://www.linkedin.com/in/iliyas-ansari-b61b67158/"><i
+          class="fab fa-linkedin fa-lg contact-icon"></i></a>
+    </div>
+    <p class='footer-description'>Made by Iliyas Ansari.</p>
+  </div>
+
+</body>
+
+</html>
